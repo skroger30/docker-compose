@@ -1,0 +1,19 @@
+🔹 What is Docker?
+Docker is a containerization platform that allows developers to package applications and their dependencies into lightweight, portable containers. These containers ensure that the application runs consistently across different environments (development, testing, and production).
+
+🔹 Why Do We Need Docker?
+✅ Portability – Runs the same on any system (Windows, Linux, macOS).
+✅ Isolation – Each container has its own dependencies, preventing conflicts.
+✅ Scalability – Easily scale applications by running multiple containers.
+✅ Efficiency – Uses less memory and starts faster than virtual machines.
+
+🔹 What is Docker Compose?
+Docker Compose is a tool to define and manage multi-container applications using a docker-compose.yml file. Instead of running multiple docker run commands, Compose lets you start all services with one command.
+
+🔹 Why Do We Need Docker Compose?
+✅ Simplifies Multi-Container Management – Run database, backend, and frontend together.
+✅ Easy Configuration – Define everything in docker-compose.yml.
+✅ Dependency Management – Ensure services start in the correct order (depends_on).
+✅ One-Command Deployment – Start everything with docker-compose up.
+
+In short, Docker makes applications portable and efficient, while Docker Compose helps manage multi-container applications easily. 🚀
