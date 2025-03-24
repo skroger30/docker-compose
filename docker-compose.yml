@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: mysqldb_container
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: employeedb_ai
+    networks:
+      crud-fe-be-db:
+
+  backend:
+    container_name: backend-container
+    image: skroger30/chatgpt-backend
+    # build:
+    #   context: ./backend
+    #   dockerfile: Dockerfile
+    ports:
+      - "8080:9095"
+    depends_on:
+      - mysqldb
+    networks:
+      crud-fe-be-db:
+    restart: on-failure
+
+  frontend:
+    # build:
+    #   context: ./frontend
+    #   dockerfile: Dockerfile
+    container_name: frontend_container
+    image: skroger30/chatgpt-frontend    
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    networks:
+      - crud-fe-be-db
+
+networks:
+  crud-fe-be-db:
